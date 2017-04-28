@@ -17,8 +17,8 @@ int tela_inicial() {
 	int escolha, dificuldade,  matrizP, status_player; 
 	
 	printf ("\n\n\n\t\t\t\t\t\tCAMPO MINADO\n\n");
-	printf ("\n\n\t\t\t\t\t   O que você deseja fazer?");
-	printf("\n\n\t\t\t\t    1- Jogar  2- Instruções  3- Descrição\n\n\t\t\t\t\t\t      ");
+	printf ("\n\n\t\t\t\t\t   O que vocÃª deseja fazer?");
+	printf("\n\n\t\t\t\t    1- Jogar  2- InstruÃ§Ãµes  3- DescriÃ§Ã£o\n\n\t\t\t\t\t\t      ");
 	scanf ("%d",&escolha);
 	
 	if (escolha == 1){
@@ -26,7 +26,7 @@ int tela_inicial() {
 			if (escolha = 1){
 			
 		system ("cls");
-		printf("\t\t\t\t\t\t Selecione o nível de dificuldade: \n\n\t\t 1-Iniciante (10X10)  2-Intermediário (15X15)  3-Avançado (20X20)   4-Personalizado(?X?)\n\t\t\t\t\t\t\t\t");
+		printf("\t\t\t\t\t\t Selecione o nÃ­vel de dificuldade: \n\n\t\t 1-Iniciante (10X10)  2-IntermediÃ¡rio (15X15)  3-AvanÃ§ado (20X20)   4-Personalizado(?X?)\n\t\t\t\t\t\t\t\t");
 		scanf("%d", &dificuldade);
 		
 		if (dificuldade == 1){
@@ -43,7 +43,7 @@ int tela_inicial() {
 			
 		}else if(dificuldade == 4){
 			
-			printf("Digite o tamanho da matriz que você quer jogar (Digite o núero apenas umas vez: Ex.: 14)");
+			printf("Digite o tamanho da matriz que vocÃª quer jogar (Digite o nÃºero apenas umas vez: Ex.: 14)");
 				scanf("%d", &matrizP);
 				TAM == matrizP;
 				
@@ -68,7 +68,7 @@ int tela_inicial() {
 		system ("cls");
 		}
 		system ("cls");
-		printf ("\n\t\t\t\tBOOOMMMM!!!! Você explodiu uma mina! Boa sorte na próxima!");
+		printf ("\n\t\t\t\tBOOOMMMM!!!! VocÃª explodiu uma mina! Boa sorte na prÃ³xima!");
 		printarTabuleirofinal();	
 	}
 	
@@ -91,11 +91,11 @@ int instrucoes(){
 	
 	system ("cls");
 		printf ("\n\n\t\t\t\t\tBem vindo ao campo minado!!");
-		printf ("\n\n\tAqui vão algumas instruções para o jogo: Primeiramente, o que significa 'Campo Minado?' \n\n\tBom, o nome já é bem sugestivo. É um campo que contém algumas minas terrestres nele. O \n\tobjetivo do nosso jogo é você descobrir todos os espaços do campo sem 'pisar' em nenhuma mina. \n");	
-		printf ("\n\tAo iniciar o jogo aparecerá um campo com vários asteriscos '*'. Esses asteriscos são os espaços \n\tainda não abertos por você. Ao abrir cada espaço, aparecerá algum número entre 0 e 8. Esse número \n\tindica a quantidade de bombas que estão próximas a casa que você abriu. Ao dizer 'próximas', \n\tquero dizer que é o somatório das posições adjacentes à posição escolhida (cima, baixo, esquerda, \n\tdireita e diagonais)");
-		printf ("\n\n\tComo fazer para abrir uma casa? Você verá que a primeira linha e a última coluna do campo \n\tnão contém asteriscos, e sim números. Você deverá se guiar por eles! Será solicitada uma coordenada \n\tpara a linha e uma coordenada para coluna. Após preencher ambos os espaços será revelado no \n\tcampo algum dos números de 0 a 8.");
-		printf ("\n\n\tComo você sabe que perdeu? Nem todas as casas que você escolher serão casas livres de bombas, \n\taté porque uma campo minado possui bombas, não é mesmo? Ao escolher uma casa que possui uma \n\tbomba, o jogo será encerrado informando que você perdeu  e todas as bombas serão reveladas.");
-		printf ("\n\n\tAgora você está pronto para jogar!! Digite '1' e aperte 'enter' para iniciar o jogo:\t");
+		printf ("\n\n\tAqui vÃ£o algumas instruÃ§Ãµes para o jogo: Primeiramente, o que significa 'Campo Minado?' \n\n\tBom, o nome jÃ¡ Ã© bem sugestivo. Ã‰ um campo que contÃ©m algumas minas terrestres nele. O \n\tobjetivo do nosso jogo Ã© vocÃª descobrir todos os espaÃ§os do campo sem 'pisar' em nenhuma mina. \n");	
+		printf ("\n\tAo iniciar o jogo aparecerÃ¡ um campo com vÃ¡rios asteriscos '*'. Esses asteriscos sÃ£o os espaÃ§os \n\tainda nÃ£o abertos por vocÃª. Ao abrir cada espaÃ§o, aparecerÃ¡ algum nÃºmero entre 0 e 8. Esse nÃºmero \n\tindica a quantidade de bombas que estÃ£o prÃ³ximas a casa que vocÃª abriu. Ao dizer 'prÃ³ximas', \n\tquero dizer que Ã© o somatÃ³rio das posiÃ§Ãµes adjacentes Ã  posiÃ§Ã£o escolhida (cima, baixo, esquerda, \n\tdireita e diagonais)");
+		printf ("\n\n\tComo fazer para abrir uma casa? VocÃª verÃ¡ que a primeira linha e a Ãºltima coluna do campo \n\tnÃ£o contÃ©m asteriscos, e sim nÃºmeros. VocÃª deverÃ¡ se guiar por eles! SerÃ¡ solicitada uma coordenada \n\tpara a linha e uma coordenada para coluna. ApÃ³s preencher ambos os espaÃ§os serÃ¡ revelado no \n\tcampo algum dos nÃºmeros de 0 a 8.");
+		printf ("\n\n\tComo vocÃª sabe que perdeu? Nem todas as casas que vocÃª escolher serÃ£o casas livres de bombas, \n\tatÃ© porque uma campo minado possui bombas, nÃ£o Ã© mesmo? Ao escolher uma casa que possui uma \n\tbomba, o jogo serÃ¡ encerrado informando que vocÃª perdeu  e todas as bombas serÃ£o reveladas.");
+		printf ("\n\n\tAgora vocÃª estÃ¡ pronto para jogar!! Digite '1' e aperte 'enter' para iniciar o jogo:\t");
 		scanf ("%d", jogar);
 		
 		if (jogar == 1){
@@ -111,7 +111,7 @@ int instrucoes(){
 		system("cls");
 		}
 		system ("cls");
-		printf ("\n\t\t\t\tBOOOMMMM!!!! Você explodiu uma mina! Boa sorte na próxima!");
+		printf ("\n\t\t\t\tBOOOMMMM!!!! VocÃª explodiu uma mina! Boa sorte na prÃ³xima!");
 		printarTabuleirofinal();	
 		}else {
 			printf("Comando incorreto!");
@@ -124,7 +124,7 @@ int descricao(){
 	
 	system("cls");
 	
-	printf ("\n\n\tAgora você está pronto para jogar!! Digite '1' e aperte 'enter' para iniciar o jogo:\t");
+	printf ("\n\n\tAgora vocÃª estÃ¡ pronto para jogar!! Digite '1' e aperte 'enter' para iniciar o jogo:\t");
 		scanf ("%d", jogar);
 		
 		if (jogar == 1){
@@ -141,7 +141,7 @@ int descricao(){
 		system("cls");
 		}
 		system ("cls");
-		printf ("\n\t\t\t\tBOOOMMMM!!!! Você explodiu uma mina! Boa sorte na próxima!");
+		printf ("\n\t\t\t\tBOOOMMMM!!!! VocÃª explodiu uma mina! Boa sorte na prÃ³xima!");
 		printarTabuleirofinal();	
 		}else {
 			printf("Comando incorreto!");
@@ -165,13 +165,13 @@ void initTabuleiro() {
 		}
 	}
 	
-	int num_bombas = (int)((TAM*TAM)*0.3f); //Conversão de float pra int (tirar a parte fracionaria)
+	int num_bombas = (int)((TAM*TAM)*0.3f); //ConversÃ£o de float pra int (tirar a parte fracionaria)
 	// Insere as bombas do tabuleiro
 	while(num_bombas != 0) {
 		//Sorteia um numero de 0 ~ (TAM-1)
-		int x = rand()%TAM; //posição da bomba x na matriz
-		int y = rand()%TAM; //posição da bomba y na matriz
-		tabuleiro_escondido[x][y] = 1; // 1 é uma bomba!!
+		int x = rand()%TAM; //posiÃ§Ã£o da bomba x na matriz
+		int y = rand()%TAM; //posiÃ§Ã£o da bomba y na matriz
+		tabuleiro_escondido[x][y] = 1; // 1 Ã© uma bomba!!
 		num_bombas--;
 	}
 }
@@ -189,12 +189,12 @@ void printarTabuleirojogo() {
 			printf(" %d", i);
 	}
 	
-	//Mostra o espaçamento "-"
+	//Mostra o espaÃ§amento "-"
 	for(i=0; i<TAM; i++){
 		printf("---");
 	}
 	
-	//Mostra o tabuleiro e o identificador de linha com espaçamento
+	//Mostra o tabuleiro e o identificador de linha com espaÃ§amento
 	for(i=0; i<TAM; i++) {
 		for(j=0; j<TAM; j++) {
 			printf("  %c", tabuleiro_mostrado[i][j]);
@@ -220,13 +220,13 @@ void printarTabuleirofinal() {
 	}
 	printf("\n  ");
 	
-	//Mostra o espaçamento "-"
+	//Mostra o espaÃ§amento "-"
 	for(i=0; i<TAM; i++){
 		printf("---");
 	}
 	printf("\n");
 	
-	//Mostra o tabuleiro e o identificador de linha com espaçamento
+	//Mostra o tabuleiro e o identificador de linha com espaÃ§amento
 	for(i=0; i<TAM; i++) {
 		for(j=0; j<TAM; j++) {
 			//printf("  %c", tabuleiro_mostrado[i][j]);
@@ -240,7 +240,7 @@ void printarTabuleirofinal() {
 int jogada() {
 	int tabuleiro_escondido[TAM][TAM],linha=0,coluna=0,status_player;
 	char tabuleiro_mostrado[TAM][TAM];
-	// Confere as posições válidas
+	// Confere as posiÃ§Ãµes vÃ¡lidas
 	do {
 		printf("\n > Digite a coordenada da linha: ");
 		scanf("%d", &linha);
@@ -248,7 +248,7 @@ int jogada() {
 		scanf("%d", &coluna);
 		
 		if(linha >= TAM || coluna >= TAM)
-			printf(" > Coordenada inválida!\n");
+			printf(" > Coordenada invÃ¡lida!\n");
 		
 	} while(linha >= TAM && coluna >= TAM);
 	
@@ -258,7 +258,7 @@ int jogada() {
 		return 0;
 	}
 	
-	if(linha >= 1 && coluna >= 1 && linha <= TAM-1 && coluna <= TAM-1){ //Somatório das posições adjacentes elementos centrais
+	if(linha >= 1 && coluna >= 1 && linha <= TAM-1 && coluna <= TAM-1){ //SomatÃ³rio das posiÃ§Ãµes adjacentes elementos centrais
 		
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -274,7 +274,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(coluna == TAM-1 && linha > 0  && linha < TAM-1 ){ //Somatório das posições adjacentes da última coluna sem as quinas
+	if(coluna == TAM-1 && linha > 0  && linha < TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da Ãºltima coluna sem as quinas
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -287,7 +287,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(coluna == 0 && linha > 0  && linha < TAM-1 ){ //Somatório das posições adjacentes da primeira coluna sem as quinas
+	if(coluna == 0 && linha > 0  && linha < TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da primeira coluna sem as quinas
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -300,7 +300,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(linha == 0 && coluna > 0  && coluna < TAM-1 ){ //Somatório das posições adjacentes da primeira linha sem as quinas
+	if(linha == 0 && coluna > 0  && coluna < TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da primeira linha sem as quinas
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -313,7 +313,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(linha == TAM-1 && coluna > 0  && coluna < TAM-1 ){ //Somatório das posições adjacentes da última linha sem as quinas
+	if(linha == TAM-1 && coluna > 0  && coluna < TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da Ãºltima linha sem as quinas
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -326,7 +326,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(linha == 0 && coluna == 0 ){ //Somatório das posições adjacentes da quina esquerda de cima
+	if(linha == 0 && coluna == 0 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da quina esquerda de cima
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -337,7 +337,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-		if(linha == 0 && coluna == TAM-1 ){ //Somatório das posições adjacentes da quina direita de cima
+		if(linha == 0 && coluna == TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da quina direita de cima
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -348,7 +348,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(linha == TAM-1 && coluna == 0 ){ //Somatório das posições adjacentes da quina esquerda de baixo
+	if(linha == TAM-1 && coluna == 0 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da quina esquerda de baixo
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -359,7 +359,7 @@ int jogada() {
 		tabuleiro_mostrado[linha][coluna] = '0' + num_bombas;
 	}
 	
-	if(linha == TAM-1 && coluna == TAM-1 ){ //Somatório das posições adjacentes da quina direita de baixo
+	if(linha == TAM-1 && coluna == TAM-1 ){ //SomatÃ³rio das posiÃ§Ãµes adjacentes da quina direita de baixo
 	
 		num_bombas = 
 		tabuleiro_escondido[linha][coluna] + 
@@ -378,7 +378,7 @@ int jogada() {
 int main() {
 	
 	system("TITLE Campo Minado v0.1");//Nome do jogo
-	setlocale (LC_ALL, "portuguese");// Coloca símbolos da língua portuguesa 
+	setlocale (LC_ALL, "portuguese");// Coloca sÃ­mbolos da lÃ­ngua portuguesa 
 	
 	tela_inicial();
 	

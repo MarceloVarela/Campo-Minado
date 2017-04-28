@@ -4,20 +4,6 @@
 
 int glo_bomb;
 
-
-int texto() {
-printf("");       
-printf("      .--.                               .-..-. _                 .-.      "); 
-printf("     : .--'                              : `' ::_;                : :      "); 
-printf("     : :    .--.  ,-.,-.,-..---.  .--.   : .. :.-.,-.,-. .--.   .-' : .--. "); 
-printf("     : :__ ' .; ; : ,. ,. :: .; `' .; :  : :; :: :: ,. :' .; ; ' .; :' .; :"); 
-printf("     `.__.'`.__,_;:_;:_;:_;: ._.'`.__.'  :_;:_;:_;:_;:_;`.__,_;`.__.'`.__.'"); 
-printf("                           : :                                        ");      
-printf("                           :_;                                    "); 
-}
-
-
-
 void carrega_matriz(int mat1[10][10]){
 
 	int x, y, z = 1;
@@ -30,8 +16,6 @@ void carrega_matriz(int mat1[10][10]){
 	}
 }
 
-/* Funcao que imprime a matriz a cada tentativa, atualizando
-os numeros ja digitados pelo usuario como bomba=B e nao-bomba=N */
 void imprime_matriz(int mat2[10][10]){
 
 	int a,b;
@@ -55,7 +39,6 @@ void imprime_matriz(int mat2[10][10]){
 
 }
 
-// Funcao que verifica no vetor das bombas se um determinado valor tem bomba
 int tem_bomba(int bombs, int vetr_bomb[10]){
 	int result = 0, i;
 
@@ -67,32 +50,29 @@ int tem_bomba(int bombs, int vetr_bomb[10]){
 	return result;
 }
 
-/* Funcao que modifica a matriz original, colocando B se for bomba e N se nao for bomba.
-Update: Essa funcao tambem simula o Campo Minador real, que quando ao redor de um valor
-nao tem bomba, ele completa com N esses valores ao redor tambem, alem do numero */
 void explode(int mat3[10][10], int bomb, int vet_bomb[10]){
 
-	if ((bomb <= 10) && (tem_bomba(bomb, vet_bomb))){ //se o valor escolhido pelo usuario for menor ou igual a 10, E nesse lugar existir uma bomba...
-		mat3[(bomb-1)][0] = 201; //se tiver bomba, muda o valor da casa para 201, que na impressao sera mudado para B
-		glo_bomb++; //incrementa o contador de bombas encontradas
+	if ((bomb <= 10) && (tem_bomba(bomb, vet_bomb))){
+		mat3[(bomb-1)][0] = 201;
+		glo_bomb++; 
 	}
-	else if ((bomb <= 10) && !(tem_bomba(bomb, vet_bomb))){ //se o valor escolhido pelo usuario for menor ou igual a 10, E nesse lugar NAO existir uma bomba...
-		mat3[(bomb-1)][0] = 101; //se NAO tiver bomba, muda o valor da casa para 101, que na impressao sera mudado para N
-		if(bomb == 1){ ////transforma em N os valores em volta, caso neles NAO exista bomba, para o canto da esquerda
+	else if ((bomb <= 10) && !(tem_bomba(bomb, vet_bomb))){
+		mat3[(bomb-1)][0] = 101;
+		if(bomb == 1){
                 if(!(tem_bomba((bomb+1), vet_bomb)) && !(tem_bomba((bomb+10), vet_bomb)) && !(tem_bomba((bomb+11), vet_bomb))){
                          mat3[1][0] = 101;
                          mat3[0][1] = 101;
                          mat3[1][1] = 101;
                 }
         }
-        else if(bomb == 10){ //transforma em N os valores em volta, caso neles NAO exista bomba, para o canto da direita
+        else if(bomb == 10){
              if(!(tem_bomba((bomb-1), vet_bomb)) && !(tem_bomba((bomb+9), vet_bomb)) && !(tem_bomba((bomb+10), vet_bomb))){
                          mat3[8][0] = 101;
                          mat3[8][1] = 101;
                          mat3[9][1] = 101;
                 }
         }
-        else{ ////transforma em N os valores em volta, caso neles NAO exista bomba, para todos outros entre 2 e 9
+        else{
              if(!(tem_bomba((bomb-1), vet_bomb)) && !(tem_bomba((bomb+1), vet_bomb)) && !(tem_bomba((bomb+9), vet_bomb)) && !(tem_bomba((bomb+10), vet_bomb)) && !(tem_bomba((bomb+11), vet_bomb))){
                          mat3[(bomb-2)][0] = 101;
                          mat3[bomb][0] = 101;
@@ -471,18 +451,17 @@ int main(){
 		exit(1);
 	}
 	else{
-		system("cls"); // Limpa a tela 
+		system("cls");
 
-		// Vai iniciar e criar o vetor de valores aleatorios de onde serao colocadas as bombas
 		srand(time(NULL));
 		for(i=0; i<10; i++){
 			vetor_bombas[i] = 1 + rand() % (100 - 1);
 		}
 
-		carrega_matriz(matriz); // Carrega a matriz original
+		carrega_matriz(matriz);
 		glo_bomb = 0;
 		printf("Intrucoes de Jogo:\n\n");
-		printf("\tVoce devera escolher um numero de 1 a 100 para desarmar as bombas.\n\tExistem 10 bombas espalhadas pelo cenario. Caso voce escolha um \n\tnumero de onde se encontra uma bomba, aparecera o simbolo B no lugar.\n\tCaso voce escolha um numero de onde nao ha bomba, \n\taparecera o simbolo N.\n\tO objetivo do jogo é encontrar as 10 bombas em ate 35 tentativas.\n\n\tUpdate: Simulando um jogo real de Campo Minado, caso voce escolha \n\tum valor que nao exista bomba e que em todos ao redor deles tambem \n\tnao exista bomba, todos sao trocados por N.\n\n\n");
+		printf("\tVoce devera escolher um numero de 1 a 100 para desarmar as bombas.\n\tExistem 10 bombas espalhadas pelo cenario. Caso voce escolha um \n\tnumero de onde se encontra uma bomba, aparecera o simbolo B no lugar.\n\tCaso voce escolha um numero de onde nao ha bomba, \n\taparecera o simbolo N.\n\tO objetivo do jogo Ã© encontrar as 10 bombas em ate 35 tentativas.\n\n\tUpdate: Simulando um jogo real de Campo Minado, caso voce escolha \n\tum valor que nao exista bomba e que em todos ao redor deles tambem \n\tnao exista bomba, todos sao trocados por N.\n\n\n");
 		printf("Esta pronto para comecar o jogo?\n\n1 - Jogar\n2 - Sair\n\n");
 		scanf("%d", &op);
 
@@ -491,8 +470,8 @@ int main(){
 		}
 		else{
 			while((tentativas <= 36) && (glo_bomb <= 9)){
-				system("cls"); // Limpa a tela 
-				imprime_matriz(matriz); // Imprime a matriz, ja com as alteracoes
+				system("cls"); 
+				imprime_matriz(matriz);
 				printf("\n\n\n");
 				if(tentativas < 36)
 					printf("Tentativa: %da\tBombas encontradas: %d\n\n\n\n", tentativas, glo_bomb);
@@ -502,7 +481,7 @@ int main(){
 				}
 				printf("Qual numero voce deseja explodir?\n");
 				scanf("%d", &bomba);
-				explode(matriz, bomba, vetor_bombas); // Manda a matriz, o valor escolhido e o vetor de bombas para verificar se era um B ou um N
+				explode(matriz, bomba, vetor_bombas);
 				tentativas++;
 			}
 			if(glo_bomb <=9)
